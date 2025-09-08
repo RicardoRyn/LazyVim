@@ -1,6 +1,8 @@
 return {
   "neovim/nvim-lspconfig",
-  cond = not vim.g.vscode,
+  cond = function()
+    return vim.loop.os_uname().sysname == "Windows_NT" and not vim.g.vscode
+  end,
   opts = {
     servers = {
       lua_ls = {
