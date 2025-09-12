@@ -6,31 +6,6 @@ return {
   "folke/snacks.nvim",
   cond = not vim.g.vscode,
   opts = {
-    dashboard = {
-      enabled = true,
-      preset = {
-        -- stylua: ignore
-        keys = {
-          { icon = " ", key = "s", desc = "Session", section = "session" },
-          { icon = " ", key = "f", desc = "Find Files", action = ":lua Snacks.dashboard.pick('files')" },
-          { icon = " ", key = "r", desc = "Recent Files", action = ":lua Snacks.dashboard.pick('oldfiles')" },
-          { icon = " ", key = "p", desc = "Projects", action = ":lua Snacks.dashboard.pick('projects')" },
-          { icon = " ", key = "w", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
-          { icon = " ", key = "c", desc = "Config", action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})", },
-          { icon = " ", key = "b", desc = "Browse Repo", action = ":lua Snacks.gitbrowse()", },
-          { icon = "󰒲 ", key = "L", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
-          { icon = " ", key = "q", desc = "Quit", action = ":qa" },
-
-        },
-      },
-      sections = {
-        { section = "header" },
-        { icon = " ", title = "Keymaps", section = "keys", indent = 2, padding = 1 },
-        { icon = " ", title = "Recent Files", section = "recent_files", indent = 2, padding = 1 },
-        { icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1 },
-        { section = "startup" },
-      },
-    },
     indent = { enabled = true, indent = { char = "▏" }, scope = { char = "▍", hl = "" } },
     notifier = { enabled = true, timeout = 3000 },
   },
